@@ -29,3 +29,6 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'java-war'
     publishLocation: 'Container'
+
+- script: mv webapp/target/webapp.war webapp/target/ROOT.war
+  displayName: Rename WAR to ROOT
