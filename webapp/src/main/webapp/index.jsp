@@ -2,72 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Satheesh Kumar – Test Project</title>
+    <title>Satheesh – Image Gallery</title>
 
     <style>
         body {
             margin: 0;
-            padding: 0;
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fad0c4);
-            background-size: 300% 300%;
-            animation: gradientMove 12s infinite alternate ease-in-out;
-            color: #fff;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
         }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
+        /* Menu Bar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 15px;
         }
 
-        .container {
+        .navbar a {
+            color: white;
+            padding: 14px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background: #ff9800;
+            border-radius: 6px;
+        }
+
+        /* Image Area */
+        .content {
             text-align: center;
-            padding: 120px 20px;
+            margin-top: 30px;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            animation: fadeIn 2s ease-out;
-        }
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-top: 10px;
-            animation: slideUp 1.8s ease-out;
+        .content img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px #888;
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px);}
-            to   { opacity: 1; transform: translateY(0);}
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px);}
-            to   { opacity: 1; transform: translateY(0);}
-        }
-
-        .footer {
-            margin-top: 80px;
-            font-size: 1rem;
-            opacity: 0.9;
-            animation: fadeIn 3s ease-out;
+            from { opacity: 0; }
+            to   { opacity: 1; }
         }
     </style>
+
+    <script>
+        function showImage(type) {
+            let imgSrc = "";
+
+            if (type === 'home') {
+                imgSrc = "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80";
+            }
+            if (type === 'animals') {
+                imgSrc = "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1200&q=80";
+            }
+            if (type === 'nature') {
+                imgSrc = "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80";
+            }
+            if (type === 'flowers') {
+                imgSrc = "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80";
+            }
+
+            document.getElementById("mainImage").src = imgSrc;
+        }
+    </script>
+
 </head>
 
-<body>
-    <div class="container">
-        <h1>Satheesh Kumar – Test Project</h1>
-        <h2>Colorful Modern UI</h2>
-        <h2>Good Luck — You are almost done! 🚀</h2>
+<body onload="showImage('home')">
 
-        <div class="footer">
-            Thank you for completing the course!
-        </div>
+    <!-- ✅ Menu Bar -->
+    <div class="navbar">
+        <a href="#" onclick="showImage('home')">Home</a>
+        <a href="#" onclick="showImage('animals')">Wild Animals</a>
+        <a href="#" onclick="showImage('nature')">Nature Images</a>
+        <a href="#" onclick="showImage('flowers')">Flowers</a>
     </div>
+
+    <!-- ✅ Image Display Area -->
+    <div class="content">
+        <img id="mainImage" src="" alt="HD Image Here">
+    </div>
+
 </body>
 </html>
