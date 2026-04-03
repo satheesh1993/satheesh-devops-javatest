@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Satheesh – Image Gallery</title>
+    <title>Satheesh Image Gallery</title>
+    <h1> SATHEESH iMAGES GALLERY</h1>
 
     <style>
         body {
