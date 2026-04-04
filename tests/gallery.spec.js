@@ -1,13 +1,13 @@
 const { test, expect } = require('@playwright/test');
 
 test('Home Page Loads', async ({ page }) => {
-await page.goto('https://your-qa-url.azurewebsites.net');
+await page.goto('https://appwindows-eydffjayaebnfha0.austriaeast-01.azurewebsites.net/webapp/');
 
 await expect(page).toHaveTitle(/Satheesh/i);
 });
 
 test('Wild Animals Image Test', async ({ page }) => {
-await page.goto('https://your-qa-url.azurewebsites.net');
+await page.goto('https://appwindows-eydffjayaebnfha0.austriaeast-01.azurewebsites.net/webapp/');
 
 await page.click('text=Wild Animals');
 
@@ -17,7 +17,7 @@ await expect(img).toBeVisible();
 });
 
 test('Nature Image Test', async ({ page }) => {
-await page.goto('https://your-qa-url.azurewebsites.net');
+await page.goto('https://appwindows-eydffjayaebnfha0.austriaeast-01.azurewebsites.net/webapp/');
 
 await page.click('text=Nature Images');
 
